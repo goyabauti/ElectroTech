@@ -94,17 +94,8 @@ class Suscripcion extends ArticuloBase {
 
 }
 
-function imprimirTicker(item : Cotizable) { //aplicando polimorfismo con ayuda de la interfaz
+export function imprimirTicker(item : Cotizable) { //aplicando polimorfismo con ayuda de la interfaz
     console.log(" Ticket generado por: $", item.calcularPrecioFinal())
 
 }
 
-const chipApple = new Chips ("Chip Apple A14", 10000, 5, 2)
-const suscripcionDocker = new Suscripcion ("Suscripcion Docker", 5000, 2)
-chipApple.actualizarStock(8)
-chipApple.actualizarStock(50)
-suscripcionDocker.actualizarStock(50)
-//console.log("El precio fianl es:", chipApple.calcularPrecioFinal())
-//console.log("El precio final el: ", suscripcionDocker.calcularPrecioFinal())
-imprimirTicker(chipApple)
-imprimirTicker(suscripcionDocker)
