@@ -24,4 +24,8 @@ Además, cuenta con un flujo de Integración Continua (CI) mediante GitHub Actio
 
 -Clonar el repositorio:
   ```bash
-    git clone [https://github.com/goyabauti/ElectroTech]
+    1. git clone [https://github.com/goyabauti/ElectroTech]
+
+    2. npm install 
+
+    3. npm run test
