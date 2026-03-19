@@ -4,7 +4,7 @@ interface Cotizable { //interface
     
 }
 
-class ArticuloBase implements Cotizable { //clases e interfaz aplicada
+ export class ArticuloBase implements Cotizable { //clases e interfaz aplicada
     
     constructor (public nombre: string, protected precioBase: number, private stock: number){//encapsulamiento
         
@@ -55,7 +55,7 @@ class Memorias extends ArticuloBase {
 
 }
 
-class Chips extends ArticuloBase { 
+export class Chips extends ArticuloBase { 
     peso: number
 
     constructor(nombre: string, precioBase: number, stock: number, peso: number){
@@ -64,13 +64,13 @@ class Chips extends ArticuloBase {
     }
     
     calcularPrecioFinal(): number { //POLIMORFISMO
-        return (this.precioBase * 1.21)  + 500 * this.peso
+        return (this.precioBase * 1.21) + 500 * this.peso
     }
     
 
 }
 
-class Keys extends ArticuloBase {
+export class Keys extends ArticuloBase {
 
     constructor(nombre: string, precioBase: number, stock: number){
         super(nombre,precioBase, stock)

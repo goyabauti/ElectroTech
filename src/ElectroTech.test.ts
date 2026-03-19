@@ -1,53 +1,26 @@
-import {describe, test, expect, Experimental} from 'vitest';
+import {describe, test, expect} from 'vitest';
 
-function calcularTierCliente(puntos: number): string{
-    if(puntos < 0){
-        return "ERROR"
-    } 
+import { Chips, Keys } from './ElectroTech.js';
 
-    else if(puntos >= 0 && puntos <= 100){
-        return "RANGO BRONCE"
-    }
+describe("Test Unitarios", () => {
 
-    else if(puntos > 100 && puntos <= 500){
-        return "RANGO PLATA"
-    }
+    test("Prueba de calcular precio para chips", () => {
 
-    else {
-        return "RANGO ORO"
-    }
+        const chip1 = new Chips ("Chip Samsung A14", 1000, 20, 2)
+        
+        const precioFinalChip = chip1.calcularPrecioFinal();
 
-}
-
-describe ("Que rango de cliente tenes, segun tus puntos", () => {
-
-    test("Puntos 0 = Error", () => {
-
-        const rango = calcularTierCliente(-5)
-
-        expect(rango).toBe("ERROR")
-        })
-
-    
-
-    test("Puntos entre 0 y 100 = BRONCE", () => {
-
-        const rango = calcularTierCliente(57)
-
-        expect(rango).toBe("RANGO BRONCE")
+        expect(precioFinalChip).toBe(2210)
     })
 
-    test("Puntos entre 100 y 500 = PLATA", () => {
+    test("Prueba de calcular precio para Keys", () => {
 
-        const rango = calcularTierCliente(249)
+        const key1 = new Keys ("Llave de steam para Call of Duty", 5000, 10)
 
-        expect(rango).toBe("RANGO PLATA")
+        const precioFinalKeys = key1.calcularPrecioFinal();
+
+        expect(precioFinalKeys).toBe(5500)
+
     })
 
-    test("Puntos +500 = ORO", () => {
-
-        const rango = calcularTierCliente(777)
-
-        expect(rango).toBe("RANGO ORO")
-    })
 })
