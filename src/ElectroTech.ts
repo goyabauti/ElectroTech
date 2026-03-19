@@ -1,0 +1,110 @@
+interface Cotizable { //interface
+
+    calcularPrecioFinal(): number
+    
+}
+
+class ArticuloBase implements Cotizable { //clases e interfaz aplicada
+    
+    constructor (public nombre: string, protected precioBase: number, private stock: number){//encapsulamiento
+        
+    }
+
+    actualizarStock(stock: number){
+        if(stock < 0){
+            console.log("Error, no es posible tener stock negativo")
+        }
+        else {
+         this.stock += stock
+        }
+
+    }
+
+    calcularPrecioFinal(): number{
+        return this.precioBase;
+    }
+
+}
+
+class Placas extends ArticuloBase { //herencia
+    peso: number
+
+    constructor(nombre: string, precioBase: number, stock: number, peso: number){
+        super(nombre, precioBase,stock)
+        this.peso = peso   
+    }
+    
+    calcularPrecioFinal(): number {
+        return (this.precioBase * 1.21) + 500 * this.peso
+    }
+
+}
+
+class Memorias extends ArticuloBase {
+    peso: number
+
+    constructor(nombre: string, precioBase: number, stock: number, peso: number){
+        super(nombre, precioBase,stock)
+        this.peso = peso   
+    }
+    
+    calcularPrecioFinal(): number {
+       return (this.precioBase * 1.21) + 500 * this.peso
+    }
+    
+
+}
+
+class Chips extends ArticuloBase { 
+    peso: number
+
+    constructor(nombre: string, precioBase: number, stock: number, peso: number){
+        super(nombre, precioBase,stock)
+        this.peso = peso   
+    }
+    
+    calcularPrecioFinal(): number { //POLIMORFISMO
+        return (this.precioBase * 1.21)  + 500 * this.peso
+    }
+    
+
+}
+
+class Keys extends ArticuloBase {
+
+    constructor(nombre: string, precioBase: number, stock: number){
+        super(nombre,precioBase, stock)
+    }
+
+    calcularPrecioFinal(): number { //POLIMORFISMO
+       return (this.precioBase * 1.10)
+    }
+
+}
+
+class Suscripcion extends ArticuloBase {
+
+    constructor(nombre: string, precioBase: number, stock: number){
+        super(nombre, precioBase, stock)
+    }
+
+    calcularPrecioFinal(): number {
+        return (this.precioBase * 1.10) 
+    }
+
+}
+
+function imprimirTicker(item : Cotizable) { //aplicando polimorfismo con ayuda de la interfaz
+    console.log(" Ticket generado por: $", item.calcularPrecioFinal())
+
+}
+
+const chipApple = new Chips ("Chip Apple A14", 10000, 5, 2)
+const suscripcionDocker = new Suscripcion ("Suscripcion Docker", 5000, 2)
+chipApple.actualizarStock(8)
+chipApple.actualizarStock(50)
+suscripcionDocker.actualizarStock(50)
+//console.log("El precio fianl es:", chipApple.calcularPrecioFinal())
+//console.log("El precio final el: ", suscripcionDocker.calcularPrecioFinal())
+imprimirTicker(chipApple)
+imprimirTicker(suscripcionDocker)
