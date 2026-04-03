@@ -10,7 +10,7 @@ export class ArticuloBase implements Cotizable { //interfaz aplicada
 
     actualizarStock(stock: number) {
         if (stock < 0) {
-            console.log("Error, no es posible tener stock negativo");
+            throw new Error("No se puede poner stock negativo");
         } else {
             this.stock += stock;
         }

@@ -8,7 +8,7 @@ export class Carrito{
     }
 
     calcularTotalCarrito(): number{
-        let total = 0; //la cuenta empieza ocn cero items
+        let total = 0; //la cuenta empieza ocn cero items, let me deja tener una variable que cambie su valor luego
 
         for (const producto of this.items){ //por cada producto que esta adentro de mi lista "this.items" itera y me agrega el item
             total = total + producto.calcularPrecioFinal();

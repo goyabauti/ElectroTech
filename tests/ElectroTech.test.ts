@@ -39,6 +39,15 @@ describe("Test Unitarios", () => {
 
         expect(totalPagar).toBe(6565)
 
-    } )
+    })
+
+    test ("Error al poner stock negativo", () => {
+
+        const memoria1 = new Memorias ("Kingston 1Tb", 2750, 5, 1024)
+
+        expect(() => {
+            memoria1.actualizarStock(-5)
+        }).toThrowError("No se puede poner stock negativo") 
+    })
 
 })

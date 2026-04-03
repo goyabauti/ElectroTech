@@ -1,15 +1,15 @@
 import { ArticuloBase } from './ArticuloBase.js';
 
 export class Memorias extends ArticuloBase {
-    peso: number;
+    gigabyte: number;
 
-    constructor(nombre: string, precioBase: number, stock: number, peso: number) {
+    constructor(nombre: string, precioBase: number, stock: number, gigabyte: number) {
         super(nombre, precioBase, stock);
-        this.peso = peso;
+        this.gigabyte = gigabyte;
     }
 
     calcularPrecioFinal(): number {
-        return (this.precioBase * 1.21) + 500 * this.peso;
+        return (this.precioBase * 1.21) + 500 * this.gigabyte;
     }
 
 }
