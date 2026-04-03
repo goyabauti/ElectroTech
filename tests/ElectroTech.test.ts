@@ -1,6 +1,6 @@
 import {describe, test, expect} from 'vitest';
 
-import { Chips, Keys } from './ElectroTech.js';
+import { Chips, Keys } from '../src/index.js';
 
 describe("Test Unitarios", () => {
 
