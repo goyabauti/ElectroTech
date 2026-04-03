@@ -1,6 +1,7 @@
 import {describe, test, expect} from 'vitest';
 
-import { Chips, Keys } from '../src/index.js';
+import { Chips, Keys, Memorias, Placas, Suscripcion } from '../src/index.js';
+import { Carrito } from '../src/classes/Carrito.js';
 
 describe("Test Unitarios", () => {
 
@@ -22,5 +23,22 @@ describe("Test Unitarios", () => {
         expect(precioFinalKeys).toBe(5500)
 
     })
+
+    test("Agregando items al carrito", () => {
+
+        const carrito = new Carrito();
+
+        const placa1 = new Placas ("B760M", 1500, 30, 4); 
+        
+        const suscripcionW = new Suscripcion ("Windows 11", 2500, 50);
+
+        carrito.agregarItem(placa1);
+        carrito.agregarItem(suscripcionW);
+
+        const totalPagar = carrito.calcularTotalCarrito();
+
+        expect(totalPagar).toBe(6565)
+
+    } )
 
 })

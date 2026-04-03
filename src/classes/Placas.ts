@@ -1,15 +1,15 @@
 import { ArticuloBase } from './ArticuloBase.js';
 
 export class Placas extends ArticuloBase {
-    peso: number;
+    socketRam: number;
 
-    constructor(nombre: string, precioBase: number, stock: number, peso: number) {
+    constructor(nombre: string, precioBase: number, stock: number, socketRam: number) {
         super(nombre, precioBase, stock);
-        this.peso = peso;
+        this.socketRam = socketRam;
     }
 
     calcularPrecioFinal(): number {
-        return (this.precioBase * 1.21) + 500 * this.peso;
+        return (this.precioBase * 1.21) + 500 * this.socketRam;
     }
 
 }

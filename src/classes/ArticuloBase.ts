@@ -1,6 +1,6 @@
 import type { Cotizable } from '../interfaces/Cotizable.js';
 
-export class ArticuloBase implements Cotizable {
+export class ArticuloBase implements Cotizable { //interfaz aplicada
 
     constructor(
         public nombre: string,

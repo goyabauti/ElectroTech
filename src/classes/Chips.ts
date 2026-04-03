@@ -1,6 +1,6 @@
 import { ArticuloBase } from './ArticuloBase.js';
 
-export class Chips extends ArticuloBase {
+export class Chips extends ArticuloBase { //herencia
     peso: number;
 
     constructor(nombre: string, precioBase: number, stock: number, peso: number) {
