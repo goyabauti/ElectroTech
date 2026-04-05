@@ -1,9 +1,9 @@
 import type { Cotizable } from "../interfaces/Cotizable.js";
 
-export class Carrito{
-    private items: Cotizable[] = []; //mi carrito es privado y solo acepta cosas "cotizables"
+export class Carrito{ // composicion, carrito es una lista de mis objetos "cotizables" 
+    private items: Cotizable[] = []; 
 
-    agregarItem(item: Cotizable){ //nuevo metodo para agregar esas cosas al carrito
+    agregarItem(item: Cotizable){ 
         this.items.push(item);
     }
 

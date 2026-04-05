@@ -8,7 +8,7 @@ export class ArticuloBase implements Cotizable { //interfaz aplicada
         private stock: number
     ) {}
 
-    actualizarStock(stock: number) {
+    actualizarStock(stock: number) { //metodos
         if (stock < 0) {
             throw new Error("No se puede poner stock negativo");
         } else {
@@ -17,7 +17,7 @@ export class ArticuloBase implements Cotizable { //interfaz aplicada
         }
     }
 
-    calcularPrecioFinal(): number {
+    calcularPrecioFinal(): number { //metodos
         return this.precioBase;
     }
 
