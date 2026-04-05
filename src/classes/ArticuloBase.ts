@@ -2,7 +2,7 @@ import type { Cotizable } from '../interfaces/Cotizable.js';
 
 export class ArticuloBase implements Cotizable { //interfaz aplicada
 
-    constructor(
+    constructor( //encapsulamiento de datos
         public nombre: string,
         protected precioBase: number,
         private stock: number
@@ -13,6 +13,7 @@ export class ArticuloBase implements Cotizable { //interfaz aplicada
             throw new Error("No se puede poner stock negativo");
         } else {
             this.stock += stock;
+            console.log("El stock fue actualizado correctamente")
         }
     }
 

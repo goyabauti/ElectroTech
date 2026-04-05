@@ -37,8 +37,17 @@ describe("Test Unitarios", () => {
 
         const totalPagar = carrito.calcularTotalCarrito();
 
-        expect(totalPagar).toBe(6565)
+        expect(totalPagar).toBe(6565) //probar tambien con resultado incorrecto para que de error
 
+    })
+
+    test ("Actualizar con stock positivo", () => {
+
+        const memoriaTest = new Memorias ("SSD WideGreen 400gb", 1500, 10, 400)
+
+        expect(() => {
+            memoriaTest.actualizarStock(15)
+        })
     })
 
     test ("Error al poner stock negativo", () => {
@@ -46,7 +55,7 @@ describe("Test Unitarios", () => {
         const memoria1 = new Memorias ("Kingston 1Tb", 2750, 5, 1024)
 
         expect(() => {
-            memoria1.actualizarStock(-5)
+            memoria1.actualizarStock(-6) //si yo pongo un stock positivo, me da error, ESTA BIEN ya que mi actualizarStock funciona para cuando se intente poner stock negativo
         }).toThrowError("No se puede poner stock negativo") 
     })
 
