@@ -6,7 +6,7 @@ export class Keys extends ArticuloBase { //herencia
         super(nombre, precioBase, stock);
     }
 
-    calcularPrecioFinal(): number { // POLIMORFISMO
+    calcularPrecioFinal(): number { 
         return (this.precioBase * 1.10);
     }
 

@@ -8,7 +8,7 @@ export class Chips extends ArticuloBase { //herencia
         this.peso = peso;
     }
 
-    calcularPrecioFinal(): number { // POLIMORFISMO
+    calcularPrecioFinal(): number { 
         return (this.precioBase * 1.21) + 500 * this.peso;
     }
 
